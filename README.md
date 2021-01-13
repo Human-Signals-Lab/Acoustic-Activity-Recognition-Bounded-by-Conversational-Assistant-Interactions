@@ -14,6 +14,7 @@ The deep learning system is written in `python 3`, specifically `pytorch`.
 - [models.py](models.py): includes the neural networks, implemented using `pytorch`. The model used in our paper is `FineTuneCNN14`, though the script includes other models we experimented with.
 - [inference.py](inference.py): loads saved models and runs inference, originally written for LOPO evaluation.
 - [location_context_inference.py](location_context_inference.py): implements the location context inference analysis (Section 8.4 in the paper), i.e. inferring the location of the device from the predicted activities. 
+- [voice_band_filtering.py](voice_band_filtering.py): implements voice interaction masking using REPET method (Section 8.3 in the paper) and saves the filtered data. It is an interactive script that asks to determine the lower and upper time range for where to apply the masking. 
 
 ### Running the main scripts:
 
