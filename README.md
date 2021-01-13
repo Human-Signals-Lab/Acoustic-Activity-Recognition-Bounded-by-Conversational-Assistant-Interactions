@@ -4,13 +4,16 @@ This is the research repository for Ok Google, What Am I Doing? Acoustic Activit
 
 ## System Requirements
 
-The deep learning system is written in `python 3`, specifically pytorch.
+The deep learning system is written in `python 3`, specifically `pytorch`.
 
 ## Scripts 
 
+### List of scripts:
 
-## Reference 
-
+- [data.py](data.py): includes the needed classes for loading the data while keeping track of participants, sessions, and activities. 
+- [models.py](models.py): includes the neural networks, implemented using `pytorch`. The model used in our paper is `FineTuneCNN14`, though the script includes other models we experimented with.
+- [inference.py](inference.py): loads saved models and runs inference, originally written for LOPO evaluation.
+- [location_context_inference.py](location_context_inference.py): implements the location context inference analysis (Section 8.4 in the paper), i.e. inferring the location of the device from the predicted activities. 
 
 ## Audio Capture Device (Raspberry Pi)
 
@@ -19,4 +22,6 @@ The deep learning system is written in `python 3`, specifically pytorch.
 ### Software
 
 
+## Reference 
 
+To be added once paper is published.
