@@ -15,6 +15,8 @@ The deep learning system is written in `python 3`, specifically `pytorch`.
 - [inference.py](inference.py): loads saved models and runs inference, originally written for LOPO evaluation.
 - [location_context_inference.py](location_context_inference.py): implements the location context inference analysis (Section 8.4 in the paper), i.e. inferring the location of the device from the predicted activities. 
 
+### Running the main scripts:
+
 ## Audio Capture Device (Raspberry Pi)
 
 ### Hardware
