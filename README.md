@@ -26,7 +26,7 @@ The Convolutional Neural Network pretrained on AudioSet that we use as a feature
 - [voice_band_filtering.py](voice_band_filtering.py): implements voice interaction masking using REPET method (Section 8.3 in the paper) and saves the filtered data. It is an interactive script that asks to determine the lower and upper time range for where to apply the masking. 
 - [main_LOPO.py](main_LOPO.py), [main_LOSO.py](main_LOSO.py), [main_personalized_LOPO+1.py](main_personalized_LOPO+1.py): main scripts that run training as well as inference after training for Leave-One-Participant-Out (LOPO), Leave-One-Session-Out (LOSO), and LOPO + 1 session personalized analyses respectively. To run the scripts with required arguments, check the next [section](#running-the-main-scripts).
 
-### Training:
+### Running the Scripts:
 
 **Note that all following scripts run location-free modelling i.e. we assume the location of the device is unknown and thus train the model on all 19 classes. To switch to location-specific modelling and to speciy the location (kitchen, living room, or bathroom) add `--context_location='kitchen'` to any of the commands below.**
 
@@ -60,7 +60,7 @@ DATATYPE="whole_recording"
 FOLDER_PATH="../../data/$DATATYPE/"
 python3 main_personalized_LOPO+1.py train --window_size=1024 --hop_size=320 --mel_bins=64 --fmin=50 --fmax=11000 --model='FineTuneCNN14' --features='mfcc' --num_epochs=500 --batch_size=32 --learning_rate=1e-5 --cuda --folder_path=$FOLDER_PATH --trim=0 --data_type=$DATATYPE --nb_participants=14 --pad='wrap'
 ``` 
-### Voice Interaction Masking
+#### Voice Interaction Masking
 
 This analysis relates to Section 8.3 in the paper. The filtered data is included in the downloaded dataset under `voice_interaction_masked` folder. If you would like to apply the REPET voice masking on your own data, you can run the following script [voice_band_filtering.py](voice_band_filtering.py). The script is interactive in that for every audio wav file, you will be asked to input the time range (lower and upper bound) over which to apply the masking. Simply run `python3 voice_band_filtering.py`.
 
@@ -77,7 +77,7 @@ python3 location_context_inference.py train --window_size=1024 --hop_size=320 --
 
 Note that the argument `--num_samples=4` determines the number of randomly selected audio clips from the hold-out participant for each context (kitchen, living room,and bathroom).
 
-### Recognition Performance vs. Audio Length
+#### Recognition Performance vs. Audio Length
 
 This analysis relates to Section 8.2 in the paper. Although you can modify the original scripts above, to easily run training and evaluation using varying audio length, you can run the following commands:
 
@@ -95,7 +95,7 @@ FOLDER_PATH="../../data/$DATATYPE/"
 python3 main_LOSO_VaryingAudioLength.py train --window_size=1024 --hop_size=320 --mel_bins=64 --fmin=50 --fmax=11000 --model='FineTuneCNN14' --features='mfcc' --num_epochs=500 --batch_size=32 --learning_rate=1e-5 --cuda --folder_path=$FOLDER_PATH --trim=0 --data_type=$DATATYPE --nb_participants=14 --LOPO --pad='wrap'
 ```
 
-### Inference
+#### Inference
 
 Although the main scripts include inference at the end, if you want to only run inference using the saved models, you can run `sudo bash runme_inference.sh` or more specifically:
 
