@@ -19,7 +19,7 @@ The Convolutional Neural Network pretrained on AudioSet that we use as a feature
 ### List of scripts:
 
 - [data.py](data.py): includes the needed classes for loading the data while keeping track of participants, sessions, and activities. 
-- [utils.py](utils.py): includes helper functions
+- [utils.py](utils.py): includes helper functions.
 - [models.py](models.py): includes the neural networks, implemented using `pytorch`. The model used in our paper is `FineTuneCNN14`, though the script includes other models we experimented with.
 - [inference.py](inference.py): loads saved models and runs inference, originally written for Leave-One-Participant-Out evaluation.
 - [location_context_inference.py](location_context_inference.py): implements the location context inference analysis (Section 8.4 in the paper), i.e. inferring the location of the device from the predicted activities. 
@@ -28,7 +28,7 @@ The Convolutional Neural Network pretrained on AudioSet that we use as a feature
 
 ### Running the main scripts:
 
-** Note that all following scripts run location-free modelling i.e. we assume the location of the device is unknown and thus train the model on all 19 classes. To switch to location-specific modelling and to speciy the location (kitchen, living room, or bathroom) add the following argument to any of the commands below `--context_location='kitchen'`**
+**Note that all following scripts run location-free modelling i.e. we assume the location of the device is unknown and thus train the model on all 19 classes. To switch to location-specific modelling and to speciy the location (kitchen, living room, or bathroom) add the following argument to any of the commands below `--context_location='kitchen'`**
 
 #### Leave-One-Participant-Out
 To run LOPO training and evaluation using the downloaded dataset, you can run `sudo bash runme_LOPO.sh` or more specifically, determine the data type you're using by setting DATATYPE with one of the folder names in the dataset. 
