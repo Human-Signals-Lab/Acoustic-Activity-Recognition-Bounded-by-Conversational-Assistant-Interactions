@@ -110,7 +110,7 @@ python3 -i inference.py train --window_size=1024 --hop_size=320 --mel_bins=64 --
 
 ### Hardware
 
-![Hardware setup of the audio capture device](/raspi-scripts/equipment.pdf)
+![Hardware setup of the audio capture device](/raspi-scripts/equipment.png)
 
 ### Software
 
