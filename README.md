@@ -110,9 +110,11 @@ python3 -i inference.py train --window_size=1024 --hop_size=320 --mel_bins=64 --
 
 ### Hardware
 
-![Hardware setup of the audio capture device](/raspi-scripts/equipment.png)
+![Hardware setup of the audio capture device](/raspi-scripts/equipment.png){:height="50%" width="50%"}
 
 ### Software
+
+![Logic Flow Implementation](/raspi-scripts/logic_flow.png){:height="50%" width="50%"}
 
 
 ## Reference 
