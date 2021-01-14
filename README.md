@@ -26,7 +26,7 @@ The Convolutional Neural Network pretrained on AudioSet that we use as a feature
 - [voice_band_filtering.py](voice_band_filtering.py): implements voice interaction masking using REPET method (Section 8.3 in the paper) and saves the filtered data. It is an interactive script that asks to determine the lower and upper time range for where to apply the masking. 
 - [main_LOPO.py](main_LOPO.py), [main_LOSO.py](main_LOSO.py), [main_personalized_LOPO+1.py](main_personalized_LOPO+1.py): main scripts that run training as well as inference after training for Leave-One-Participant-Out (LOPO), Leave-One-Session-Out (LOSO), and LOPO + 1 session personalized analyses respectively. To run the scripts with required arguments, check the next [section](#running-the-main-scripts).
 
-### Running the main scripts:
+### Training:
 
 **Note that all following scripts run location-free modelling i.e. we assume the location of the device is unknown and thus train the model on all 19 classes. To switch to location-specific modelling and to speciy the location (kitchen, living room, or bathroom) add `--context_location='kitchen'` to any of the commands below.**
 
