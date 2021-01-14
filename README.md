@@ -110,11 +110,17 @@ python3 -i inference.py train --window_size=1024 --hop_size=320 --mel_bins=64 --
 
 ### Hardware
 
-![Hardware setup of the audio capture device](/raspi-scripts/equipment.png){:height="50%" width="50%"}
+![Hardware setup of the audio capture device](/raspi-scripts/equipment.png)
+
+1. [Raspberry Pi 3 B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+
+![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.raspberrypi.org%2Fproducts%2F%2Fraspberry-pi-3-model-b%2F&psig=AOvVaw2IP6lf-BflkBmzhIBPeE5N&ust=1610749553899000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDj7-y7nO4CFQAAAAAdAAAAABAD)
+
+2. 
 
 ### Software
 
-![Logic Flow Implementation](/raspi-scripts/logic_flow.png){:height="50%" width="50%"}
+![Logic Flow Implementation](/raspi-scripts/logic_flow.png)
 
 
 ## Reference 
