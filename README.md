@@ -28,7 +28,8 @@ The Convolutional Neural Network pretrained on AudioSet that we use as a feature
 
 ### Running the main scripts:
 
-**Note that all following scripts run location-free modelling i.e. we assume the location of the device is unknown and thus train the model on all 19 classes. To switch to location-specific modelling and to speciy the location (kitchen, living room, or bathroom) add the following argument to any of the commands below `--context_location='kitchen'`**
+**Note that all following scripts run location-free modelling i.e. we assume the location of the device is unknown and thus train the model on all 19 classes. To switch to location-specific modelling and to speciy the location (kitchen, living room, or bathroom) add the following argument to any of the commands below 
+`--context_location='kitchen'`**
 
 #### Leave-One-Participant-Out
 To run LOPO training and evaluation using the downloaded dataset, you can run `sudo bash runme_LOPO.sh` or more specifically, determine the data type you're using by setting DATATYPE with one of the folder names in the dataset. 
