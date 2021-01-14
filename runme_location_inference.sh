@@ -2,9 +2,10 @@
 
 ############# MAIN #####################################
 
-#DATATYPE="recording_btw_query_answer"
+#DATATYPE="mid-interaction_segments"
 DATATYPE="whole_recording"
-FOLDER_PATH="../../Remote-User-Study/$DATATYPE/"
+#DATATYPE="voice_interaction_masked"
+FOLDER_PATH="../../data/$DATATYPE/"
 
 ## CNN Classifier
 """

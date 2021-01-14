@@ -350,7 +350,7 @@ def load_data(folder_path):
     print('Average Length of Recordings: ', av_length)
     print('Total number of interactions: {}'.format(count))
     print('Mean {} and std {}'.format(avg_length,std_length))
-    
+
 def fft_plot(data, sr, activity):
     n = len(data)
     T = 1./sr
@@ -385,10 +385,9 @@ def butter_bandpass_filter(data, lowcut, highcut, fs, order=10):
 
 if __name__ == '__main__':
 
-    folder_path = '../../Remote-User-Study/whole_recording/'
+    folder_path = '../../data/whole_recording/'  ## change to data folder
     #filter_save_data(folder_path)
     fore_back_sep_data(folder_path)
-    #load_data('../../Remote-User-Study/recording_btw_query_answer/')
 
 
 

@@ -124,7 +124,7 @@ def load_data(args):
                     audio, sr = librosa.load(wav, sr = None, mono=True, dtype=np.float32)
                     
                     label = Labels[activity].value
-                    if data_type == 'recording_btw_query_answer' and len(audio)/sr > 7.:
+                    if data_type == 'mid-interaction_segments' and len(audio)/sr > 7.:
                         continue
                     act.add_interaction(audio, label)
                     print("Audio_length: {}".format(len(audio)/sr))
@@ -213,11 +213,11 @@ def infer_context(args):
 
 
 
-    if data_type == 'recording_btw_query_answer' or data_type == 'separated_data_interactiveV3_imputed_margin_2-10':
+    if data_type == 'mid-interaction_segments' or data_type == 'voice_interaction_masked':
         PATH = './models/sample_rate={},window_size={},hop_size={},mel_bins={},fmin={},fmax={}/data_type={}/segment_{}_{}_interaction_based_{}_test_segment_{}/pad_{}/{}_{}/batch_size={},lr={}'.format(
     sr, window_size, hop_size, mel_bins, fmin, fmax, data_type, segment, segment_size, interaction_based, test_segment, pad, model_path, context_location, batch_size, learning_rate)
     else:
-        if args.full and data_type=='Unknown_Sounds':
+        if args.full and data_type=='out_of_scope_sounds':
             PATH = './models/sample_rate={},window_size={},hop_size={},mel_bins={},fmin={},fmax={}/data_type={}/segment_{}_{}_interaction_based_{}_test_segment_{}/pad_{}/{}_{}/batch_size={},lr={}'.format(
      sr, window_size, hop_size, mel_bins, fmin, fmax, 'whole_recording', segment, segment_size, interaction_based, test_segment, pad, model_path, context_location, batch_size, learning_rate)
         else:

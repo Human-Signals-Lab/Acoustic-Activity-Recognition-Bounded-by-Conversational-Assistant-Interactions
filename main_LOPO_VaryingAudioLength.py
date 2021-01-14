@@ -125,7 +125,7 @@ def load_data( clip_size, args):
                     audio, sr = librosa.load(wav, sr = None, mono=True, dtype=np.float32)
                     audio = audio[10*sr:10*sr + clip_size*sr]
                     label = Labels[activity].value
-                    if data_type == 'recording_btw_query_answer' and len(audio)/sr > 7.:
+                    if data_type == 'mid-interaction_segments' and len(audio)/sr > 7.:
                         continue
                     act.add_interaction(audio, label)
                     print("Audio_length: {}".format(len(audio)/sr))
