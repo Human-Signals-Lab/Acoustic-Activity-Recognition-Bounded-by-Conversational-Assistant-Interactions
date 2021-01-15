@@ -122,6 +122,8 @@ To capture voice-based interactions with the Google Home, we developed an audio 
 
 ### Software and Configuration
 
+![Logic Flow Implementation](/raspi-scripts/images/logic_flow.png)
+
 #### Install Raspbian OS
 
 There's an entire process that documents [how to flash your SD card with the latest Raspbian OS](https://www.raspberrypi.org/documentation/installation/installing-images/).
@@ -142,9 +144,20 @@ $ sudo reboot
 
 Next, connecting the camera module is straightforward and you can follow this [tutorial](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera).
 
+#### Install Requirements
+
+These installations are required to be able to run the main software script that runs the camera and microphone as well as the mailing script. In order to monitor the system for unexpected hardware issues, the device is set up to report the hardware activity status and process logs every 10 minutes via email. 
+
+```bash
+$ sudo pip3 install numpy 
+$ sudo pip3 install pyaudio
+$ sudo pip3 install picamera
+$ sudo pip3 install APScheduler
+$ sudo pip3 install email-to
+```
 
 
-![Logic Flow Implementation](/raspi-scripts/images/logic_flow.png)
+
 
 
 ## Reference 
