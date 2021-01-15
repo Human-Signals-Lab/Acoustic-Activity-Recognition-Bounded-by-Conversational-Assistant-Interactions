@@ -172,7 +172,6 @@ In order to provide a plug-and-play functionality, we programmed the raspberry p
 ```
 sudo /home/pi/light_sensing.sh > /home/pi/light_sensing_log.log 2>&1 &
 sudo /home/pi/MailingStatus.sh > /home/pi/mailing_log.log 2>&1 &
- 
 ```
 Once this is done, reboot your device and verify that it works. You can check whether the main script is running by using the following command: `ps aux | grep lightSense` or also the mailing script using `ps aux | grep mailytime`.
 
