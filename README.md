@@ -163,7 +163,7 @@ Make sure to upload all scripts in [raspi-scripts](raspi-scripts) to your raspbe
 
 ##### Mailing Script
 
-In order to monitor the system for unexpected hardware issues, the device is set up to report the hardware activity status and process logs every 10 minutes via email. Make sure you set the `gmail_user` and `gmail_password` in [mailytime.py](mailytime.py) to the gmail where you would like to receive the device status. In order to work, you would need to turn on the "Less secure app access" on your account ([for more  info](https://support.google.com/accounts/answer/6010255#zippy=%2Cif-less-secure-app-access-is-on-for-your-account)). We recommend you create a new account to be used only for this purpose. 
+In order to monitor the system for unexpected hardware issues, the device is set up to report the hardware activity status and process logs every 10 minutes via email. Make sure you set the variables `to`, `gmail_user`, and `gmail_password` in [mailytime.py](mailytime.py) to the gmail where you would like to receive the device status. In order to work, you would need to turn on the "Less secure app access" on your account ([for more  info](https://support.google.com/accounts/answer/6010255#zippy=%2Cif-less-secure-app-access-is-on-for-your-account)). We recommend you create a new account to be used only for this purpose. 
 
 ##### Run ALL Autonomously On Boot
 

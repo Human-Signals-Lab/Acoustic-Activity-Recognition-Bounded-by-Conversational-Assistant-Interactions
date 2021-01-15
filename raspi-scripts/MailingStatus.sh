@@ -1,0 +1,3 @@
+#!/bin/sh
+echo Running mailing process for continuous status update...
+python3 -u /home/pi/mailytime.py > /home/pi/mailytime_log.log 2&>1 &
