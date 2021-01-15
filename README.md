@@ -146,19 +146,39 @@ Next, connecting the camera module is straightforward and you can follow this [t
 
 #### Install Requirements
 
-These installations are required to be able to run the main software script that runs the camera and microphone as well as the mailing script. In order to monitor the system for unexpected hardware issues, the device is set up to report the hardware activity status and process logs every 10 minutes via email. 
+These installations are required to be able to run the main software script that runs the camera and microphone as well as the mailing script.  
 
 ```bash
 $ sudo pip3 install numpy 
 $ sudo pip3 install pyaudio
 $ sudo pip3 install picamera
 $ sudo pip3 install APScheduler
+$ sudo pip3 install psutil
 $ sudo pip3 install email-to
 ```
 
+#### Software Scripts
 
+Make sure to upload all scripts in [raspi-scripts](raspi-scripts) to your raspberry pi under `/home/pi/`. 
 
+##### Mailing Script
 
+In order to monitor the system for unexpected hardware issues, the device is set up to report the hardware activity status and process logs every 10 minutes via email. Make sure you set the `gmail_user` and `gmail_password` in [mailytime.py](mailytime.py) to the gmail where you would like to receive the device status. In order to work, you would need to turn on the "Less secure app access" on your account. [More info](https://support.google.com/accounts/answer/6010255#zippy=%2Cif-less-secure-app-access-is-on-for-your-account). We recommend you create a new account to be used only for this purpose. 
+
+##### Run ALL Autonomously On Boot
+
+In order to provide a plug-and-play functionality, we programmed the raspberry pi to run all necessary scripts on boot. You can do this by replacing the file `etc/rc.local` on your raspberry pi with the [rc.local](rc.local) file we provided, or more specifically you the following lines before "exit 0: to your file:
+
+```
+sudo /home/pi/light_sensing.sh > /home/pi/light_sensing_log.log 2>&1 &
+sudo /home/pi/MailingStatus.sh > /home/pi/mailing_log.log 2>&1 &
+ 
+```
+Once this is done, reboot your device and verify that it works. You can check whether the main script is running by using the following command: `ps aux | grep lightSense` or whether the mailing script is running using `ps aux | grep mailytime`.
+
+To debug for any issues, you can also check the logs that are created once the scripts are executed. These logs will show if any errors come up and will help you debug any issues. 
+
+That's all! For help, questions, and general feedback, contact Rebecca Adaimi (rebecca.adaimi@utexas.edu)
 
 ## Reference 
 
