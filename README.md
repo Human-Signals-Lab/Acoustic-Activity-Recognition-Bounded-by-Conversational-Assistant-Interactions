@@ -106,7 +106,7 @@ python3 -i inference.py train --window_size=1024 --hop_size=320 --mel_bins=64 --
 ```
 ## Audio Capture Device (Raspberry Pi)
 
-To capture voice-based interactions with the Google Home, we developed an audio recording add-on accessory device that does not interfere with the assistant’s operation and functionalities. We included the hardware and software components needed to for anyone who wants to recreate the device.
+To capture voice-based interactions with the Google Home, we developed an audio recording add-on accessory device that does not interfere with the assistant’s operation and functionalities. We included the hardware and software components needed for anyone who wants to recreate the device.
 
 ### Hardware
 
