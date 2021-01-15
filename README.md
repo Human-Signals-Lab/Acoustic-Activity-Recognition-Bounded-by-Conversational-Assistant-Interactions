@@ -106,21 +106,45 @@ python3 -i inference.py train --window_size=1024 --hop_size=320 --mel_bins=64 --
 ```
 ## Audio Capture Device (Raspberry Pi)
 
-
+To capture voice-based interactions with the Google Home, we developed an audio recording add-on accessory device that does not interfere with the assistant’s operation and functionalities. We included the hardware and software components needed to for anyone who wants to recreate the device.
 
 ### Hardware
 
-![Hardware setup of the audio capture device](/raspi-scripts/equipment.png)
+![Hardware setup of the audio capture device](/raspi-scripts/images/equipment.png)
 
 1. [Raspberry Pi 3 B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+2. [ReSpeaker Linear 4 Mic Array](https://respeaker.io/linear_4_mic_array/)
+3. [Raspberry Pi Camera Module v2](https://www.raspberrypi.org/products/camera-module-v2/)
+4. [16GB Micro SD Card (Class 10)](https://www.amazon.com/SanDisk-COMINU024966-16GB-microSD-Card/dp/B004KSMXVM)
+5. [5V 2.5A Switching Power Supply (Highly Recommended)](https://www.adafruit.com/product/1995)
+6. [Google Home Mini](https://store.google.com/us/product/google_home_mini_first_gen)
+7. [3D Printed Mounting Structure](/raspi-scripts/GCode_3D_Structures/): if you have access to a 3D printer and would like to create the mounting structure, we have provided the GCode files.  
 
-![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.raspberrypi.org%2Fproducts%2F%2Fraspberry-pi-3-model-b%2F&psig=AOvVaw2IP6lf-BflkBmzhIBPeE5N&ust=1610749553899000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDj7-y7nO4CFQAAAAAdAAAAABAD)
+### Software and Configuration
 
-2. 
+#### Install Raspbian OS
 
-### Software
+There's an entire process that documents [how to flash your SD card with the latest Raspbian OS](https://www.raspberrypi.org/documentation/installation/installing-images/).
 
-![Logic Flow Implementation](/raspi-scripts/logic_flow.png)
+#### Install Microphone Drivers
+
+Next, install the audio drivers for the ReSpeaker Linear 4-Mic Array. Detailed documentation about the process [can be found here](https://wiki.seeedstudio.com/ReSpeaker_4-Mic_Linear_Array_Kit_for_Raspberry_Pi/).
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ git clone https://github.com/respeaker/seeed-voicecard.git
+$ cd seeed-voicecard
+$ sudo ./install.sh  
+$ sudo reboot
+```
+#### Connect Camera Module
+
+Next, connecting the camera module is straightforward and you can follow this [tutorial](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera).
+
+
+
+![Logic Flow Implementation](/raspi-scripts/images/logic_flow.png)
 
 
 ## Reference 
