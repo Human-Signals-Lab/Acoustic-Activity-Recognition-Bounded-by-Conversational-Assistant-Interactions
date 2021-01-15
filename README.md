@@ -159,15 +159,15 @@ $ sudo pip3 install email-to
 
 #### Software Scripts
 
-Make sure to upload all scripts in [raspi-scripts](raspi-scripts) to your raspberry pi under `/home/pi/`. 
+Make sure to upload all scripts in [raspi-scripts](/raspi-scripts) to your raspberry pi under `/home/pi/`. 
 
 ##### Mailing Script
 
-In order to monitor the system for unexpected hardware issues, the device is set up to report the hardware activity status and process logs every 10 minutes via email. Make sure you set the variables `to`, `gmail_user`, and `gmail_password` in [mailytime.py](mailytime.py) to the gmail where you would like to receive the device status. In order to work, you would need to turn on the "Less secure app access" on your account ([for more  info](https://support.google.com/accounts/answer/6010255#zippy=%2Cif-less-secure-app-access-is-on-for-your-account)). We recommend you create a new account to be used only for this purpose. 
+In order to monitor the system for unexpected hardware issues, the device is set up to report the hardware activity status and process logs every 10 minutes via email. Make sure you set the variables `to`, `gmail_user`, and `gmail_password` in [mailytime.py](/raspi-scripts/mailytime.py) to the gmail where you would like to receive the device status. In order to work, you would need to turn on the "Less secure app access" on your account ([for more  info](https://support.google.com/accounts/answer/6010255#zippy=%2Cif-less-secure-app-access-is-on-for-your-account)). We recommend you create a new account to be used only for this purpose. 
 
 ##### Run ALL Autonomously On Boot
 
-In order to provide a plug-and-play functionality, we programmed the raspberry pi to run all necessary scripts on boot. You can do this by replacing the file `etc/rc.local` on your raspberry pi with the [rc.local](rc.local) file we provided, or more specifically you can add the following lines before "exit 0:" to your file:
+In order to provide a plug-and-play functionality, we programmed the raspberry pi to run all necessary scripts on boot. You can do this by replacing the file `etc/rc.local` on your raspberry pi with the [rc.local](/raspi-scripts/rc.local) file we provided, or more specifically you can add the following lines before "exit 0:" to your file:
 
 ```
 sudo /home/pi/light_sensing.sh > /home/pi/light_sensing_log.log 2>&1 &
