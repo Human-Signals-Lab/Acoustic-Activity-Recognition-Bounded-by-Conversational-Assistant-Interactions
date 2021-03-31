@@ -181,4 +181,24 @@ That's all! For help, questions, and general feedback, contact Rebecca Adaimi (r
 
 ## Reference 
 
-To be added once paper is published.
+BibTex Reference:
+
+```
+@article{10.1145/3448090,
+author = {Adaimi, Rebecca and Yong, Howard and Thomaz, Edison},
+title = {Ok Google, What Am I Doing? Acoustic Activity Recognition Bounded by Conversational Assistant Interactions},
+year = {2021},
+issue_date = {March 2021},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {5},
+number = {1},
+url = {https://doi-org.ezproxy.lib.utexas.edu/10.1145/3448090},
+doi = {10.1145/3448090},
+journal = {Proc. ACM Interact. Mob. Wearable Ubiquitous Technol.},
+month = mar,
+articleno = {2},
+numpages = {24},
+keywords = {Environmental Sounds, Activities of Daily Living, Conversational Assistants, Voice Assistants, Smart Environment, Smart Speaker, Google Home, Human Activity Recognition, Deep Learning, Audio Processing}
+}
+```
